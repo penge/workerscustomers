@@ -1,0 +1,24 @@
+<h1>Registration</h1>
+
+<%= form_for @user, url: {action: 'create'}, html: {class: 'form'} do |f| %>
+  <div class="hide">
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+  </div>
+  
+  <p>
+    Email: <%= f.email_field :email %>
+    <% if @user.errors[:email].present? %>
+      <%= @user.errors[:email].join(' ') %>
+    <% end %>
+  </p>
+  
+  <p>
+    Password: <%= f.password_field :password %>
+    <% if @user.errors[:password].present? %>
+      <%= @user.errors[:password].join(' ') %>
+    <% end %>
+  </p>
+  
+  <%= f.submit "Create" %>
+<% end %>
