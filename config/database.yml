@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: workers_and_customers
+
+test:
+  <<: *default
+  database: workers_and_customers_test
+
+production:
+  <<: *default
+  database: workers_and_customers
