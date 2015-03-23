@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
+  
+  def self.authenticate(email, password)
+    User.find_by(email: email).try(:authenticate, password)
+  end
 end
