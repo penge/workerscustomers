@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authorize_user!
-    if current_user.id.to_s != params[:id]
+    if current_user.id != session[:user_id]
       render text: 'Access Denied', status: :unauthorized
     end
   end
