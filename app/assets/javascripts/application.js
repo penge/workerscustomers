@@ -53,7 +53,7 @@ $(document).ready(function() {
     });
   };
   
-  $(document).on('click', '.next_page, .previous_page, [rel~="next"], [rel~="prev"]', function(e) {
+  $(document).on('click', '.pagination a', function(e) {
     e.preventDefault();
     var href = $(this).attr('href');
     $.get(href).done(function(data) {
