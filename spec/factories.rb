@@ -5,4 +5,8 @@ FactoryGirl.define do
     email 'eva@modra.com'
     password 'eva'
   end
+  
+  factory :skill do
+    name 'make origami'
+  end
 end
