@@ -5,8 +5,7 @@
 
 $(document).ready(function() {
   $(document).on('input', '#search', function() {
-    $input = $(this);
-    value = $input.val();
+    var value = $(this).val();
     if (!value) {
       $('#skills').empty();
       return;
@@ -23,7 +22,7 @@ $(document).ready(function() {
   });
   
   $(document).on('click', '#skills li', function(e) {
-    $item = $(this);
+    var $item = $(this);
     var id = $item.data('id');
     var val = $item.text();
     if ($.inArray(id, getPickIds()) == -1) {
