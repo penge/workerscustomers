@@ -3,5 +3,76 @@
  *= require_self
  */
 
+body
+  padding: 20px
+
+body, input
+  font-family: 'Arial'
+  font-size: 20px
+
+::selection
+  color: #222
+  background: #dedede
+
+input,
+input:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:focus
+  padding: 15px !important
+  outline: none !important
+  background: none !important
+  border: 1px solid silver
+
+a
+  display: inline-block
+  color: #78BA07
+  text-decoration: none
+  margin: 10px 0
+  padding: 5px 0 7px 0
+  border-bottom: 2px solid
+  &:hover
+    border-bottom-width: 4px
+    padding-bottom: 5px
+
 .hide
   display: none !important
+
+.pull-left
+  float: left
+
+.input-error
+  padding: 15px
+  color: rgb(231, 78, 78)
+
+.highlight
+  color: #78BA07
+  
+#search, #results
+  width: 250px
+  box-sizing: border-box
+  border: 2px solid black
+  
+#results
+  & ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    & li
+      padding: 6px
+      &:hover
+        cursor: pointer
+        text-decoration: underline
+        
+#picks-box
+  padding: 0 25px
+  & #picks
+    & .pick
+      display: inline-block
+      background: rgb(115, 154, 189)
+      padding: 5px
+      color: white
+      margin: 0 5px
+      line-height: 25px
+      &:hover
+        cursor: pointer
+        background: #BD7373
