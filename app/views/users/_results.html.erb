@@ -1,0 +1,19 @@
+<% unless users.present? %>
+  <p class="results-message">No results!</p>
+<% else %>
+  <p class="results-message"><%= users.count %> results</p>
+  <table id="users">
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Email</th>
+    </tr>
+  <% users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.surname %></td>
+      <td><%= user.email %></td>
+    <tr>
+  <% end %>
+  <table>
+<% end %>

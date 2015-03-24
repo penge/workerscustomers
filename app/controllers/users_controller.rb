@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  
+  respond_to :html, :js
+  
+  def index
+    skill_ids = params[:skill_ids]
+    user_ids = UserSkill.where(skill_id: skill_ids).pluck(:user_id)
+    @users = User.find(user_ids)
+  end
+  
   def new
     @user = User.new
   end
