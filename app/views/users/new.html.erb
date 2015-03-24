@@ -7,16 +7,20 @@
   </div>
   
   <p>
-    Email: <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: 'email' %>
     <% if @user.errors[:email].present? %>
-      <%= @user.errors[:email].join(' ') %>
+      <div class="input-error">
+        <%= @user.errors[:email].join(' ') %>
+      </div>
     <% end %>
   </p>
   
   <p>
-    Password: <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: 'password' %>
     <% if @user.errors[:password].present? %>
-      <%= @user.errors[:password].join(' ') %>
+      <div class="input-error">
+        <%= @user.errors[:password].join(' ') %>
+      </div>
     <% end %>
   </p>
   
