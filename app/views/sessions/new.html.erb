@@ -14,5 +14,7 @@
     <%= password_field_tag :password, '', placeholder: 'password' %>
   </p>
   
-  <p class="button"><%= submit_tag "Log in" %></p>
+  <p class="button">
+    <%= link_to 'Log in', '#', class: 'submit-button' %>
+  </p>
 <% end %>
