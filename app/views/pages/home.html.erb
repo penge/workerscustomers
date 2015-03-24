@@ -1,7 +1,7 @@
 <h1>Home</h1>
 
 <% if current_user %>
-  <b><%= current_user.name %><b>
+  <b>Hello <%= current_user.name %>.</b>
   <%= link_to 'Logout', logout_path %>
 <% else %>
   <%= link_to 'Register', register_path %>
