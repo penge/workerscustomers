@@ -25,18 +25,36 @@ $(document).ready(function() {
     var $item = $(this);
     var id = $item.data('id');
     var val = $item.text();
-    if ($.inArray(id, getPickIds()) == -1) {
-      $item.remove();
-      $('#picks').append('<span class="pick" data-id="' + id + '">' + val + '</span>')
-      $('#pick-actions').removeClass('hide');
+    if ($.inArray(id, getPickIds()) != -1) {
+      return;
+    }
+    var picksType = $('#picks').data('type');
+    $('#picks').append('<span class="pick ' + picksType + '" data-id="' + id + '">' + val + '</span>')
+    $('#pick-actions').removeClass('hide');
+    $item.remove();
+    if (picksType == 'deletable') {
+      $.post('/user_skills', {skill_id: id}).done(function(data) {
+      });
     }
   });
   
-  $(document).on('click', '.pick', function(e) {
+  $(document).on('click', '.pick.searchable', function(e) {
     $(this).remove();
     if (!$('.pick').length) {
       $('#pick-actions').addClass('hide');
     }
+  });
+  
+  $(document).on('click', '.pick.deletable', function(e) {
+    var $skill = $(this);
+    var skillId = $skill.data('id');
+    $.ajax({
+      url: '/user_skills/' + skillId,
+      type: 'DELETE',
+      success: function(result) {
+        $skill.remove();
+      }
+    });
   });
   
   $(document).on('click', '#search-button', function(e) {
