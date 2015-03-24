@@ -30,9 +30,8 @@ end
 
 # Create plenty of skills
 
-alphabet = [*('a'..'z')]
 (1..3000).each do |index|
-  random_name = alphabet.sample(9).join
+  random_name = Faker::Hacker.ingverb + "#{index}"
   Skill.create!(name: random_name)
 end
 
@@ -66,10 +65,13 @@ ema = User.create!(
 # Create batch of workers
 
 (1..200).each do |index|
+  name = Faker::Name.first_name
+  surname = Faker::Name.last_name
+  email = "#{name}#{index}@#{surname}.com"
   User.create!(
-    name: "Worker#{index}",
-    surname: "Workeringon",
-    email: "worker#{index}@workeringon.com",
+    name: name,
+    surname: surname,
+    email: email,
     password: 'worker',
     skills: random_skills(skills, 3),
   )
