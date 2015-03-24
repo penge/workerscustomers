@@ -9,6 +9,9 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# A library for generating fake data such as names, addresses, and phone numbers
+gem 'faker'
+
 # Pagination
 gem 'will_paginate', '~> 3.0.6'
 
