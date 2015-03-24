@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     skill_ids = params[:skill_ids]
     page = params[:page]
-    user_ids = UserSkill.where(skill_id: skill_ids).pluck(:user_id)
+    user_ids = UserSkill.user_ids_having_required_skills(skill_ids)
     @users = User.paginate(page: page).find(user_ids)
   end
   
