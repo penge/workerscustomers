@@ -43,7 +43,7 @@ $(document).ready(function() {
     e.preventDefault();
     $('#skills').hide();
     var ids = getPickIds();
-    $.get('users', {skill_ids: ids}).done(function(data) {
+    $.get('users', {skill_ids: ids, page: 1}).done(function(data) {
     });
   });
   
@@ -52,4 +52,11 @@ $(document).ready(function() {
       return $(pick).data('id');
     });
   };
+  
+  $(document).on('click', '.next_page, .previous_page, [rel~="next"], [rel~="prev"]', function(e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $.get(href).done(function(data) {
+    });
+  });
 });

@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   
   def index
     skill_ids = params[:skill_ids]
+    page = params[:page]
     user_ids = UserSkill.where(skill_id: skill_ids).pluck(:user_id)
-    @users = User.find(user_ids)
+    @users = User.paginate(page: page).find(user_ids)
   end
   
   def new

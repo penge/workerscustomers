@@ -1,7 +1,7 @@
 <% unless users.present? %>
   <p class="results-message">No results!</p>
 <% else %>
-  <p class="results-message"><%= users.count %> results</p>
+  <p class="results-message"><%= users.total_entries %> results</p>
   <table id="users">
     <tr>
       <th>Name</th>
@@ -16,4 +16,5 @@
     <tr>
   <% end %>
   <table>
+  <%= will_paginate users %>
 <% end %>
