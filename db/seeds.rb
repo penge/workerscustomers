@@ -67,7 +67,7 @@ ema = User.create!(
 (1..200).each do |index|
   name = Faker::Name.first_name
   surname = Faker::Name.last_name
-  email = "#{name}#{index}@#{surname}.com"
+  email = "#{name.downcase}#{index}@#{surname.downcase}.com"
   User.create!(
     name: name,
     surname: surname,
