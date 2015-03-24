@@ -11,7 +11,7 @@ $(document).ready(function() {
       return;
     }
     
-    $.get('skills', {query: value}).done(function(data) {
+    $.get('/skills', {query: value}).done(function(data) {
       $('#skills').show();
     });
   });
@@ -43,7 +43,7 @@ $(document).ready(function() {
     e.preventDefault();
     $('#skills').hide();
     var ids = getPickIds();
-    $.get('users', {skill_ids: ids, page: 1}).done(function(data) {
+    $.get('/users', {skill_ids: ids, page: 1}).done(function(data) {
     });
   });
   
