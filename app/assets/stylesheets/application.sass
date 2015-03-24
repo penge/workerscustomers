@@ -48,33 +48,49 @@ a
 
 .highlight
   color: #78BA07
-  
-#search, #results
+
+#search-box
+  @extend %clearfix
+
+#search, #skills
   width: 250px
   box-sizing: border-box
   border: 2px solid black
-  
-#results
-  & ul
-    list-style-type: none
-    margin: 0
-    padding: 0
-    & li
-      padding: 6px
-      &:hover
-        cursor: pointer
-        text-decoration: underline
+
+#search
+  margin-right: 20px
+
+#skills
+  list-style-type: none
+  margin: 0
+  padding: 0
+  & li
+    padding: 6px
+    &:hover
+      cursor: pointer
+      text-decoration: underline
         
-#picks-box
-  padding: 0 25px
-  & #picks
-    & .pick
-      display: inline-block
-      background: rgb(115, 154, 189)
-      padding: 5px
-      color: white
-      margin: 0 5px
-      line-height: 25px
-      &:hover
-        cursor: pointer
-        background: #BD7373
+#picks
+  & .pick
+    display: inline-block
+    background: rgb(115, 154, 189)
+    padding: 5px
+    color: white
+    margin: 0 5px
+    line-height: 25px
+    &:hover
+      cursor: pointer
+      background: #BD7373
+        
+#users-box
+  margin: 50px 0
+  & .results-message
+    font-weight: bold
+  & #users
+    tr
+      th
+        text-align: left
+        padding: 5px 15px 5px 0
+      td
+        padding: 5px 15px 5px 0
+  

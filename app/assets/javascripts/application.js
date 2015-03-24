@@ -8,12 +8,12 @@ $(document).ready(function() {
     $input = $(this);
     value = $input.val();
     if (!value) {
-      $('#results').empty();
+      $('#skills').empty();
       return;
     }
     
     $.get('skills', {query: value}).done(function(data) {
-      $('#results').show();
+      $('#skills').show();
     });
   });
   
@@ -22,7 +22,7 @@ $(document).ready(function() {
     $(this).closest('form').submit();
   });
   
-  $(document).on('click', '#results ul li', function(e) {
+  $(document).on('click', '#skills li', function(e) {
     $item = $(this);
     var id = $item.data('id');
     var val = $item.text();
@@ -42,7 +42,7 @@ $(document).ready(function() {
   
   $(document).on('click', '#search-button', function(e) {
     e.preventDefault();
-    $('#results').hide();
+    $('#skills').hide();
     var ids = getPickIds();
   });
   
