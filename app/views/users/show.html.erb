@@ -1,0 +1,9 @@
+<h1>Pro<span class="highlight">file</span></h1>
+
+<div>
+  <p><b><%= @user.full_name %>.</b></p>
+  <p><b><%= @user.email %>.</b></p>
+  
+  <%= link_to 'Edit',  edit_profile_path(@user) %>
+  <%= link_to 'Back', root_path %>
+</div>
