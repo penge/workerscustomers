@@ -9,6 +9,9 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Pagination
+gem 'will_paginate', '~> 3.0.6'
+
 # A set of responders modules
 gem 'responders', '~> 2.0'
 
