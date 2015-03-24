@@ -44,6 +44,8 @@ $(document).ready(function() {
     e.preventDefault();
     $('#skills').hide();
     var ids = getPickIds();
+    $.get('users', {skill_ids: ids}).done(function(data) {
+    });
   });
   
   var getPickIds = function() {
