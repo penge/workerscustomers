@@ -17,6 +17,3 @@
 
 # Ignore keep files
 *.keep
-
-# Ignore secrets.yml
-config/secrets.yml
