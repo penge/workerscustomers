@@ -27,6 +27,18 @@ skills = [
   Skill.create!(name: skill)
 end
 
+
+# Create plenty of skills
+
+alphabet = [*('a'..'z')]
+(1..3000).each do |index|
+  random_name = alphabet.sample(9).join
+  Skill.create!(name: random_name)
+end
+
+
+# Define helper method for assigning random skills
+
 def random_skills(skills, count)
   Skill.where(name: skills.sample(count))
 end
