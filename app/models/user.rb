@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def self.authenticate(email, password)
     User.find_by(email: email).try(:authenticate, password)
   end
+  
+  def full_name
+    name + ' ' + surname
+  end
 end
