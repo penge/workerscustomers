@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :skills
+  resources :user_skills
 end
