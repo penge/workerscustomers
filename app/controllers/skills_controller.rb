@@ -4,9 +4,8 @@ class SkillsController < ApplicationController
   respond_to :js
   
   def index
-    query = params[:query]
-    logger.info query
-    @skills = Skill.where('name LIKE ?', "%#{query}%").limit(8)
+    name = params[:query]
+    @skills = Skill.alike_skills(name, 8)
     respond_with @skills
   end
 end
