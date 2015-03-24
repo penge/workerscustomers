@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :edit, :update]
+  before_action :authorize_user!, only: [:edit, :update]
   
   respond_to :html, :js
   

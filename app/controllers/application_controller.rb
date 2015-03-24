@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
     return false
   end
+  
+  def authorize_user!
+    if current_user.id.to_s != params[:id]
+      render text: 'Access Denied', status: :unauthorized
+    end
+  end
 
   private
   def current_user
