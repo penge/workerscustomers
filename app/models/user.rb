@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  self.per_page = 20
+  
   has_secure_password
   
   has_many :user_skills
