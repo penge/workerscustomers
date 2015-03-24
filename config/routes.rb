@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  get  'register', to: 'users#new'
-  post 'register', to: 'users#create'
+  get  'signup', to: 'users#new'
+  post 'signup', to: 'users#create'
   
   get 'login', to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
