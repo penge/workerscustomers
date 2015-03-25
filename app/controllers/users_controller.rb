@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     skill_ids = params[:skill_ids]
     page = params[:page]
     user_ids = UserSkill.user_ids_having_required_skills(skill_ids)
-    @users = User.paginate(page: page).find(user_ids)
+    @users = User.where(id: user_ids).paginate(page: page)
   end
   
   def new
