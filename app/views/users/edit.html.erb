@@ -19,7 +19,6 @@
     <% end %>
   </p>
   
-  <h5>Skills: (click on any to delete)</h5>
   <span id="picks" data-type="deletable">
     <% @user.skills.each do |skill| %>
     <span class="pick deletable" data-id="<%= skill.id %>"><%= skill.name %></span>
