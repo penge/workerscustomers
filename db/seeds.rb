@@ -28,7 +28,7 @@ skills = [
   'create website',
   'repair car',
   'fix kitchen',
-  'make orignami',
+  'make origami',
   'make glass',
   'cut wood',
   'work with animals',
