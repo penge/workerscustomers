@@ -14,7 +14,21 @@ class User < ActiveRecord::Base
     User.find_by(email: email).try(:authenticate, password)
   end
   
+  def name
+    read_attribute('name') || unnamed
+  end
+  
+  def surname
+    read_attribute('surname') || unnamed
+  end
+  
   def full_name
+    return unnamed if name == unnamed || surname == unnamed
     name + ' ' + surname
+  end
+  
+  private
+  def unnamed
+    'Unnamed'
   end
 end
