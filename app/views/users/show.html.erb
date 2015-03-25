@@ -4,11 +4,15 @@
   <p><b><%= @user.full_name %></b></p>
   <p><b><%= @user.email %></b></p>
   <p>
-    Skills:
-    <% @user.skills.each do |skill| %>
-    <ul>
-      <li><%= skill.name %></li>
-    </ul>
+    <% if @user.skills.empty? %>
+      No skills yet
+    <% else %>
+      Skills:
+      <ul class="skills-list">
+        <% @user.skills.each do |skill| %>
+        <li><%= skill.name %></li>
+        <% end %>
+      </ul>
     <% end %>
   </p>
   
