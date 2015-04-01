@@ -3,20 +3,12 @@
 <%= form_for @user, url: {action: 'update'}, html: {class: 'form'} do |f| %>
   <p>
     <%= f.text_field :name, placeholder: 'name' %>
-    <% if @user.errors[:name].present? %>
-      <div class="input-error">
-        <%= @user.errors[:name].join(' ') %>
-      </div>
-    <% end %>
+    <%= render 'input_error', user: @user, attribute: :name %>
   </p>
   
   <p>
     <%= f.text_field :surname, placeholder: 'surname' %>
-    <% if @user.errors[:surname].present? %>
-      <div class="input-error">
-        <%= @user.errors[:surname].join(' ') %>
-      </div>
-    <% end %>
+    <%= render 'input_error', user: @user, attribute: :surname %>
   </p>
   
   <span id="picks" data-type="deletable">

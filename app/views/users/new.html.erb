@@ -8,20 +8,12 @@
   
   <p>
     <%= f.email_field :email, placeholder: 'email' %>
-    <% if @user.errors[:email].present? %>
-      <div class="input-error">
-        <%= @user.errors[:email].join(' ') %>
-      </div>
-    <% end %>
+    <%= render 'input_error', user: @user, attribute: :email %>
   </p>
   
   <p>
     <%= f.password_field :password, placeholder: 'password' %>
-    <% if @user.errors[:password].present? %>
-      <div class="input-error">
-        <%= @user.errors[:password].join(' ') %>
-      </div>
-    <% end %>
+    <%= render 'input_error', user: @user, attribute: :password %>
   </p>
   
   <%= link_to 'Register', '#', class: 'submit-button' %>

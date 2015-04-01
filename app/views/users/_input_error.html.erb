@@ -1,0 +1,5 @@
+<% if user.errors[attribute].present? %>
+  <div class="input-error">
+    <%= user.errors[attribute].join(' ') %>
+  </div>
+<% end %>
